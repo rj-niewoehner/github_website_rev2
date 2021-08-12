@@ -1,0 +1,47 @@
+---
+title: "My (not) First Markdown"
+author: "RJ Niewoehner"
+
+output:
+  html_document:
+    toc: true                     # Turn on Table of Contents
+    toc_depth: 2                  # Headings at level 1, 2 will be included in the TOC
+    number_sections: true         # Number headings
+    code_folding: show            # Enable Show/Hide code in HTML file
+    df_print: kable               # DF printing done with kable()
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rmarkdown::html_document(df_print = knitr::kable)
+```
+
+# R Markdown 
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+a <- 1:10
+```
+
+# Output Options {.tabset}
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=TRUE, warning=FALSE}
+plot(pressure)
+```
+
+## Including Data and DataFrames
+
+```{r, echo=TRUE}
+print(a)
+iris
+cars
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
